@@ -81,6 +81,7 @@ class WeatherApp(QWidget):
                 response = requests.get(url)
                 response.raise_for_status()
                 data = response.json()
+                print(data)
 
                 if data["cod"] == 200:
                     self.display_weather(data)
@@ -140,7 +141,7 @@ class WeatherApp(QWidget):
         if 200 <= weather_id <= 232:
             return "⛈️"
         elif 300 <= weather_id <= 321:
-            return "🌥️"
+            return "🌦️"
         elif 500 <= weather_id <= 531:
             return "🌧️"
         elif 600 <= weather_id <= 622:
